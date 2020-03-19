@@ -1,14 +1,20 @@
-<?php 
-include("model/client_db.php");
+<!doctype html>
 
-function console_log($output, $with_script_tags = true) {
-    $js_code = 'console.log(' . json_encode($output, JSON_HEX_TAG) . 
-');';
-    if ($with_script_tags) {
-        $js_code = '<script>' . $js_code . '</script>';
-    }
-    echo $js_code;
-}
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>TEST GET USER</title>
+    <script src="model/user_db.js"></script>
+</head>
 
-console_log(get_user_credentials("HammoAnnea"));
-?>
+<body>
+    <p id="testText">TEST</p>
+    <script>
+        async function main() {
+            var user = await getUserType("HammoAnnea", "uqwe3aj3he");
+            document.getElementById("testText").innerText = user;
+        }
+        main();
+    </script>
+</body>
+</html>
