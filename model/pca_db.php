@@ -1,6 +1,7 @@
 <?php
     include("database.php");
 
+    // time format 'YYYY-MM-DDTHH:MM:SS', example -> '2020-03-18T21:38:00'
     function check_in($pcauser, $starttime) {
         global $db;
 
@@ -30,6 +31,7 @@
         }
     }
 
+    // time format 'YYYY-MM-DDTHH:MM:SS', example -> '2020-03-18T21:38:00'
     function check_out($pcauser, $starttime) {
         global $db;
 
@@ -59,6 +61,7 @@
         }
     }
 
+    // time format 'YYYY-MM-DDTHH:MM:SS', example -> '2020-03-18T21:38:00'
     function assign_pca($clientuser, $pcauser, $starttime) {
         global $db;
 

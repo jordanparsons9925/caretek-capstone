@@ -1,6 +1,7 @@
 <?php
     include("database.php");
 
+    // dob format -> YYYY-MM-DD
     function add_client($username, $password, $firstname, $lastname,
                         $address, $city, $postalcode, $homephone,
                         $cellphone, $sin, $dob, $regionid, $physician,
@@ -48,6 +49,7 @@
         }
     }
 
+    // time format 'YYYY-MM-DDTHH:MM:SS', example -> '2020-03-18T21:38:00'
     function add_shift($username, $starttime, $endtime, $serviceid, $servicedetail) {
         global $db;
 
