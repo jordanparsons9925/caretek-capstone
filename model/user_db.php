@@ -1,16 +1,5 @@
 <?php
-    function console_log($output, $with_script_tags = true) {
-        $js_code = 'console.log(' . json_encode($output, JSON_HEX_TAG) . 
-    ');';
-        if ($with_script_tags) {
-            $js_code = '<script>' . $js_code . '</script>';
-        }
-        echo $js_code;
-    }
-
-    console_log("php file opened");
-
-    include("database.php");
+include("database.php");
 
     function get_user_type($username, $password) {
         global $db;
@@ -41,15 +30,13 @@
             $statement->closeCursor();
 
             if ($employee != NULL) {
-                echo $employee['Pos'];
+                return $employee['Pos'];
             } else {
-                echo NULL;
+                return NULL;
             }
 
         } else {
-            echo "Client";
+            return "Client";
         }
     }
-
-    get_user_type($_POST["username"], $_POST["password"]);
 ?>
