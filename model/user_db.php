@@ -1,5 +1,8 @@
 <?php
-include("database.php");
+    include("database.php");
+
+    $username = filter_input(INPUT_POST, 'username');
+    $password = filter_input(INPUT_POST, 'password');
 
     function get_user_type($username, $password) {
         global $db;
@@ -15,7 +18,7 @@ include("database.php");
         $statement->execute();
         $client = $statement->fetch();
         $statement->closeCursor();
-        
+            
         if ($client == NULL) {
             $query = 'SELECT position.PositionName AS Pos
                         FROM employee, position
@@ -39,4 +42,8 @@ include("database.php");
             return "Client";
         }
     }
+
+    $result = get_user_type($username, $password);
 ?>
+
+<p>The result is: <?php echo $result; ?></p>
