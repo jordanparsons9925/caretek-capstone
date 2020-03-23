@@ -1,3 +1,9 @@
+<?php
+session_start();
+$type = $_SESSION["userType"];
+if ($type != "Client")
+    header("Location: ../");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
