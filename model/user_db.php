@@ -1,4 +1,5 @@
 <?php
+    session_start();
     include("database.php");
 
     $username = filter_input(INPUT_POST, 'username');
@@ -43,7 +44,8 @@
         }
     }
 
-    $result = get_user_type($username, $password);
-?>
+    $_SESSION["userType"] = get_user_type($username, $password);
 
-<p>The result is: <?php echo $result; ?></p>
+    header("Location: ../view");
+    
+?>
