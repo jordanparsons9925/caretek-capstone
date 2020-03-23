@@ -8,7 +8,7 @@ switch($type) {
     case "PCA":
         include("pca_interface.php");
         break;
-    case "Manager":
+    case "Nurse Manager":
         include("manager_interface.php");
         break;
     default:
