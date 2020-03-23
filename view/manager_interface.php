@@ -1,7 +1,10 @@
 <?php
-session_start();
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
 $type = $_SESSION["userType"];
-if ($type != "Nurse Manager")
+$testType = ($type == "Nurse Manager");
+if (!$testType)
     header("Location: ../");
 ?>
 <!DOCTYPE html>
